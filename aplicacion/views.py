@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from servicios.models import Servicio
 
 # Create your views here.
 
@@ -8,7 +9,8 @@ def home (request):
     return render (request,"home.html")
 
 def servicios (request):
-    return render (request,"servicios.html")
+    todoservicio = Servicio.objects.all()
+    return render (request,"servicios.html", {'servicios':todoservicio})
 
 def tienda (request):
     return render (request,"tienda.html")

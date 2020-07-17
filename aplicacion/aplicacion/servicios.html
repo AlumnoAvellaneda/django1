@@ -5,5 +5,12 @@
 
 {% block content %}
 
-   <div><p></p></div>
+    {%  for ele in servicios %}
+   <div><p>
+       <h2 style="color: white">{{ ele.titulo }}</h2>
+       <p style="color: greenyellow">{{ ele.contenido }} </p>
+       <p> <img src="{{ ele.imagen.url }}">
+   </p></div>
+
+    {% endfor %}
 {% endblock %}
